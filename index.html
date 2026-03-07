@@ -50,6 +50,33 @@
         <section id="Contato">
             <h2>Contato</h2>
             <p>Tem algum projeto em mente? Entre em contato comigo!</p>
+            <form action="">
+                <label for="name">Nome: </label>
+                <input type="text" id="nome" name="nome" required> <br>
+
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" required> <br>
+
+                <label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" name="telefone"> <br>
+
+                <label for="assunto">Assunto: </label>
+                <select name="assunto" id="assunto">
+                    <option value="orcamento">Orçamento</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="outro">Outro</option>
+                </select>
+                    <br>
+
+                <label for="mensagem">Mensagem: </label>
+                <textarea name="mensagem" id="mensagem" cols="20" rows="5" required></textarea> <br>
+
+                <input type="checkbox" id="inscricao" name="inscricao">
+                <label for="inscricao">Deseja receber novidades por e-mail?</label> <br>
+
+                <input type="submit" value="Enviar mensagem">
+
+            </form>
             <address>
                 E-mail: <a href="mailto:a.luiza.fullstack@gmail.com">a.luiza.fullstack@gmail.com</a> <br>
                 Telefone: <a href="tel: +55 (47) 997055373">+55 (47) 997055373</a>
