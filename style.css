@@ -1,0 +1,623 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body {
+margin: 0;
+padding: 0;
+color: #ffffff;
+font-family: 'Outfit', sans-serif;
+min-height: 100vh;
+background-color: #08080c; /* Um tom acima do preto absoluto */
+background-image: 
+/* Luz pêssego vindo da lateral esquerda superior */
+radial-gradient(at 0% 0%, rgba(255, 210, 170, 0.3) 0%, transparent 60%),
+/* Luz roxa principal vindo de toda a lateral esquerda */
+radial-gradient(at 0% 50%, rgba(150, 80, 255, 0.4) 0%, transparent 75%),
+/* Névoa azulada para preencher a base esquerda */
+radial-gradient(at 0% 100%, rgba(100, 120, 255, 0.2) 0%, transparent 70%);
+background-attachment: fixed;
+background-size: cover;
+}
+
+/* LAYOUT */
+
+.layout{
+display:flex;
+width:100%;
+}
+
+/* SITE */
+
+.site{
+width:70%;
+margin-right: 30%;
+min-width: 100vh;
+}
+
+/* TERMINAL */
+
+#terminal-container {
+width: 30%;
+height: 100vh;
+/* Efeito de Vidro: Deixa o gradiente do fundo aparecer levemente atrás */
+background: rgba(13, 13, 18, 0.85); 
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);   
+border-left: 1px solid rgba(189, 147, 249, 0.15); /* Borda roxa sutil */
+font-family: "JetBrains Mono", monospace;
+position: fixed;
+right: 0;
+top: 0;
+display: flex;
+flex-direction: column;
+z-index: 1000;
+box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-menu {
+display: flex;
+flex-direction: column;
+height: 100%;
+margin-bottom: 15px;
+padding: 20px;
+line-height: 1.6;
+}
+
+.terminal-display {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 16px;
+  color: #e0d7f7;
+  margin-bottom: 15px;
+  gap: 4px;
+}
+
+#terminal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sistema-mensagem { 
+    color: rgba(220, 208, 255, 0.9);
+    margin-bottom: 5px; 
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.prompt {
+color: #BD93F9;
+font-size: 16px;
+margin-right: 8px;
+white-space: nowrap;
+font-weight: bold;
+}
+
+.terminal-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+#terminal-cmd {
+background: transparent;
+border: none;
+color: #50fa7b;
+font-family: inherit;
+font-size: 16px; /* Acompanha o aumento do display */
+outline: none;
+width: 10px;
+caret-color: transparent;
+}
+
+.cursor {
+width: 10px;
+height: 18px;
+background: #50fa7b;
+box-shadow: 0 0 8px #50fa7b; /* Brilho no cursor */
+animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Cores das mensagens do sistema */
+.system-msg { color: rgba(255, 255, 255, 0.4); margin-bottom: 5px; }
+.success-msg { color: #50fa7b; }
+.error-msg { color: #ff5555; }
+
+/* HEADER */
+
+.hero {
+    display: flex;
+    width: 70%; 
+    height: 120px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    background: transparent; /* Totalmente transparente */
+    backdrop-filter: blur(40px); /* Desfoque muito alto para suavizar a luz */
+    -webkit-backdrop-filter: blur(40px);
+    /* Borda quase invisível para não marcar o topo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topo-conteudo{
+flex: 0 0 70%;
+height: 100%;
+background: transparent;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 60px;
+}
+
+.logo{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.logo h1{
+font-size: 2.5rem;
+color: #ffffff;
+font-weight: 800;
+/* Sombra mais difusa para parecer que a luz de fundo está iluminando a letra */
+text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.logo p{
+font-size:1.25rem;
+color: rgba(255, 255, 255, 0.7);
+text-align:left;
+font-style:italic;
+}
+
+.frase-destaque{
+color: #ffffff;
+text-align:center;
+font-size:1.5rem;
+}
+
+.frase-destaque span{
+color: #dcd0ff; /* Lilás bem claro para o destaque "Portfólio" */
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(220, 208, 255, 0.4);
+}
+
+.menu-comandos{
+flex:0 0 30%;
+height:100%;
+font-size: 1rem;
+display:flex;
+align-items:center;
+justify-content:center;
+background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2));
+border-left: 1px solid rgba(195, 171, 171, 0.297);
+backdrop-filter: blur(15px);
+}
+
+.menu-comandos ul{
+list-style:none;
+display:flex;
+padding: 15px 0;
+flex-direction:column;
+justify-content:center;
+height:100%;
+}
+
+.menu-comandos li{
+margin-bottom:3px;
+}
+
+.prefixo{
+color: rgba(255, 255, 255, 0.4);
+font-size: 1.15rem;
+margin-right:8px;
+}
+
+.comando{
+color: #ffffff;
+text-decoration: none;
+font-family: 'JetBrains Mono', monospace;
+font-size: 1.10rem;
+color: rgba(220, 210, 255, 0.9);
+font-weight: bold;
+position: relative;
+transition: all 0.3s ease;
+}
+
+.comando:hover {
+color: #ffffff;
+text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* O cursor que fica piscando */
+.comando::after {
+content: "_"; /* Ou use "|" se preferir */
+margin-left: 5px;
+color: #ffffff;
+text-shadow: 0 0 8px #ffffff;
+animation: cursor-pisca 1s steps(1, start) infinite;
+}
+
+@keyframes cursor-pisca {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+
+/* CONTEUDO */
+
+.conteudo{
+display:flex;
+flex-direction:column;
+align-items:center;
+padding-top:100px;
+}
+
+section {
+padding: 80px 5%; /* Aumentamos o respiro vertical */
+width: 100%;
+position: relative;
+box-sizing: border-box;
+border-top: 1px solid rgba(136, 158, 129, 0.1); /* Linha sutil entre sessões */
+}
+
+/* O "Prompt" de comando antes de cada título de seção */
+section::before {
+content: "user@analuiza:~$ cd /" attr(id);
+position: absolute;
+top: 30px;
+left: 15px;
+margin-bottom: 10px;
+font-family: 'JetBrains Mono', monospace;
+font-size: 1.15rem;
+color: #dcd0ff;
+letter-spacing: 0.5px;
+color: rgba(255, 255, 255, 0.63); /* Branco translúcido para suavidade */
+}
+
+.texto-introducao h2{
+color: #ffffff;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom:10px;
+}
+
+.texto-introducao p{
+text-align:center;
+font-size: 1.1rem;
+line-height: 1.6; /* Aumenta o espaço entre linhas para facilitar a leitura */
+text-align: left; /* Alinhado à esquerda costuma ocupar melhor o espaço em layouts 70/30 */
+margin-bottom:10px;
+}
+
+/* SOBRE */
+
+.perfil-container{
+display:flex;
+flex-wrap: wrap;
+align-items: center;
+gap:40px;
+flex-wrap: wrap;
+}
+
+.conteudo-principal{
+display:flex;
+gap:30px;
+align-items:center;
+flex:1;
+}
+
+.foto-perfil{
+flex:0 1 250px;
+min-width: 150px;
+}
+
+.foto-perfil img{
+width:100%;
+height: auto;
+border-radius:20px;
+border:1px solid rgba(136,158,129,0.3);
+}
+
+.texto-introducao{
+flex:1;
+min-width: 300px;
+display:flex;
+flex-direction:column;
+text-align: center;
+gap:10px;
+}
+
+.lista-habilidade{
+border-left:1px solid rgba(136,158,129,0.2);
+flex:0 0 180px;
+padding-left:25px;
+
+}
+
+.lista-habilidade h2{
+color: #ffffff;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom:15px;
+
+}
+
+.lista-habilidade ul{
+list-style:none;
+font-style: italic;
+padding-left: 0;
+}
+
+.lista-habilidade li{
+color: rgba(220, 208, 255, 0.9);
+margin-bottom:9px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.lista-habilidade li::before{
+content: "✦";
+color: #ffffff;
+font-size:12px;
+font-weight: bold;
+}
+
+/* PROJETOS */
+
+.projeto-container{
+display: flex;
+flex-wrap: wrap; /* Permite que os cards pulem para a linha de baixo se não houver espaço */
+gap: 20px;       /* Espaço entre os cards */
+justify-content: center; /* Centraliza os cards no espaço disponível */
+padding: 20px;   
+}
+.conteudo-principal-projetos {
+width: 100%;
+margin-bottom: 30px;
+}
+.texto-introducao-projetos h2{
+text-align:center;
+color: #ffffff;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom:15px;
+}
+.texto-introducao-projetos p{
+text-align: justify;
+text-align:center;
+font-size: 1.1rem;
+line-height: 1.6; /* Aumenta o espaço entre linhas para facilitar a leitura */
+text-align: left; /* Alinhado à esquerda costuma ocupar melhor o espaço em layouts 70/30 */
+margin-bottom:10px;
+}
+.projetos-card {
+flex: 1 1 300px; /* Faz os cards crescerem, mas mantendo uma base de 300px */
+max-width: 350px; /* Impede que o card fique largo demais em telas grandes */
+display: flex;
+flex-direction: column; /* Garante que imagem -> título -> texto fiquem um abaixo do outro */
+align-items: center;    /* Centraliza os elementos dentro do card */
+text-align: center;
+background: rgba(255, 255, 255, 0.03); /* Fundo sutil para destacar os cards */
+padding: 20px;
+border-radius: 15px;
+border: 1px solid rgba(189, 147, 249, 0.1); /* Borda roxa bem suave */
+}
+
+.projetos-card img {
+width: 100%;       /* Imagem ocupa toda a largura do card */
+height: auto;
+border-radius: 10px;
+margin-bottom: 15px;
+}
+
+.projetos-card a {
+  color: #BD93F9;
+  font-weight: bold;
+  /* Cor do fundo totalmente preenchido */
+  background: rgba(189, 147, 249, 0.1);
+  /* Remove a borda ou mantém da mesma cor do fundo para um visual limpo */
+  border: 1px solid rgba(189, 147, 249, 0.3);
+  padding: 10px 20px; /* Aumentei o preenchimento lateral para ficar mais elegante */
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline-block; /* Garante que o padding e margens funcionem bem */
+  text-decoration: none; /* Remove o sublinhado padrão de links */
+  transition: 0.3s; /* Adiciona uma animação suave ao passar o mouse */
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.projetos-card a:hover {
+color: #000000;
+font-weight: bold;
+background-color: #e0d7f7; /* Muda para o roxo de destaque que definimos */
+border-color: #e0d7f7;
+transform: translateY(-2px); /* Leve pulo para cima */
+}
+
+/*HABILIDADES E TECNOLOGIAS */
+
+/* 1. A SEÇÃO OCUPA A LARGURA TODA (A linha de separação vai de ponta a ponta) */
+#habilidades {
+    width: 100%; 
+    padding: 60px 0;
+    min-width: 500px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha na extensão da página */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha a tag no canto esquerdo */
+}
+
+/* 2. A TAG NO CANTO DA PÁGINA (Com um pequeno recuo lateral para não colar no monitor) */
+#habilidades::before {
+content: "user@analuiza:~$ cd /habilidades";
+display: block;
+margin-left: 3px; /* Alinha com o início do seu conteúdo das outras seções */
+margin-bottom: 20px;
+font-family: 'JetBrains Mono', monospace;
+color: #dcd0ff;
+color: rgba(255, 255, 255, 0.63); /* Branco translúcido para suavidade */
+}
+
+/* 3. APENAS A CAIXA DA TABELA FICA CENTRALIZADA */
+.habilidades-container {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    
+    /* Centralização da caixa */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto; 
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* 4. AJUSTES INTERNOS DA TABELA */
+#habilidades table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+#habilidades h2 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* CARDS ARREDONDADOS */
+#habilidades tbody td {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#habilidades tbody tr td:first-child {
+    border-radius: 10px 0 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#habilidades tbody tr td:last-child {
+    border-radius: 0 10px 10px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ESTILO DO NÍVEL */
+.nivel-tag {
+    background: rgba(189, 147, 249, 0.1);
+    font-weight: bold;
+    color: #BD93F9;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(189, 147, 249, 0.3);
+    font-size: 0.85rem;
+}
+
+.nivel-tag:hover {
+color: #ffffff;
+text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/*CONTATO */
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto; /* Remove o vácuo que força a tela cheia */
+    padding: 60px 5% 40px 5%; /* Espaçamento equilibrado em cima e embaixo */
+    width: 100%;
+}
+
+.contato-container{
+display: flex;
+flex-wrap: wrap; /* Permite que os cards pulem para a linha de baixo se não houver espaço */
+gap: 15px;       /* Espaço entre os cards */
+justify-content: center; /* Centraliza os cards no espaço disponível */
+}
+
+.conteudo-principal-contato {
+width: 100%;
+margin-bottom: 30px;
+}
+
+.texto-introducao-contato h2{
+text-align:center;
+color: #ffffff;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom:15px;
+}
+
+.texto-introducao-contato p{
+text-align: justify;
+text-align:center;
+font-size: 1.1rem;
+line-height: 1.6; /* Aumenta o espaço entre linhas para facilitar a leitura */
+text-align: left; /* Alinhado à esquerda costuma ocupar melhor o espaço em layouts 70/30 */
+margin-bottom:5px;
+}
+
+.endereco-card a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(189, 147, 249, 0.1);
+    border: 1px solid rgba(189, 147, 249, 0.3);
+    border-radius: 10px;
+    color: #BD93F9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.endereco-card a:hover {
+    background: #e0d7f7;
+    color: #08080c;
+    transform: translateY(-3px);
+}
+
+/* Rodapé fixado abaixo dos botões */
+.rodape {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    margin-top: auto; /* Empurra para o fim da seção */
+}
+
+.rodape p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}

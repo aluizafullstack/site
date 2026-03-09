@@ -1,146 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo da página</title>
-</head>
-<body>
-    <header>
-        <h1>Ana</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - Ana Luiza</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-        <nav>
+  <body>
+    <div class="layout">
+      <div class="site">
+        <header class="hero">
+          <div class="topo-conteudo">
+            <div class="logo">
+              <h1>Ana Luiza</h1>
+              <p>Desenvolvedora Full Stack em desenvolvimento</p>
+            </div>
+
+            <div class="frase-destaque">
+              Bem vindo ao meu <span>Portfólio</span>
+            </div>
+          </div>
+
+          <nav class="menu-comandos">
             <ul>
-                <li><a href="#Sobre">Sobre mim</a></li>
-                <li><a href="#Projeto">Projetos</a></li>
-                <li><a href="#Contato">Contato</a></li>
+              <li>
+                <span class="prefixo">typing:</span>
+                <a class="comando">sobre</a>
+              </li>
+
+              <li>
+                <span class="prefixo">typing:</span>
+                <a class="comando">projeto</a>
+              </li>
+
+              <li>
+                <span class="prefixo">typing:</span>
+                <a class="comando">habilidades</a>
+              </li>
+
+              <li>
+                <span class="prefixo">typing:</span>
+                <a class="comando">contato</a>
+              </li>
             </ul>
-        </nav>
+          </nav>
+        </header>
 
-    </header>
+        <main class="conteudo">
+          <section id="sobre" class="sessao-sobre">
+            <div class="perfil-container">
+              <div class="conteudo-principal">
+                <div class="foto-perfil">
+                  <img src="Ana-Luiza.jpeg" alt="Imagem de Ana Luiza" />
+                </div>
 
-    <section id="Sobre">
-        <h2>Sobre Mim</h2>
-        <img src="Ana-Luiza.jpeg" title="Imagem de Ana Luiza">
-        <article>
-            <p>
-                Sou um desenvolvedora em formação, seguindo uma jornada estruturada
-                até me tornar full stack. Meu objetivo é criar sistemas
-                inteligentes, escaláveis e com impacto real, sempre priorizando boas
-                práticas de arquitetura.
-            </p> 
-        </article>
-        <aside>
-            <h3>Habilidades</h3>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-            </ul>
-        </aside>
-    </section>  
+                <div class="texto-introducao">
+                  <h2>Sobre Mim</h2>
 
-    <section id="Projeto">
-        <h2>Projetos</h2>
-        <article>
-            <h3>Portfólio</h3>
-            <p>
-                Este projeto eu construi....
-            </p>
-        </article>
+                  <p>
+                    Sou uma desenvolvedora em formação, seguindo uma jornada
+                    estruturada até me tornar full stack. Meu objetivo é criar
+                    sistemas inteligentes, escaláveis e com impacto real, sempre
+                    priorizando boas práticas de arquitetura.
+                  </p>
+                </div>
+              </div>
 
-    </section>
+              <div class="lista-habilidade">
+                <aside>
+                  <h2>Habilidades</h2>
 
-    <section id="habilidades">
-        <h2>Habilidades e tecnologias</h2>
+                  <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </section>
 
-        <table>
+          <section id="projeto">
+            <div class="projeto-container">
+              <div class="conteudo-principal-projetos">
+                <div class="texto-introducao-projetos">
+                  <h2>Projetos</h2>
+                  <p>
+                    Nesta seção apresento alguns projetos desenvolvidos para
+                    aplicar na prática conceitos de Engenharia de Software e
+                    aprimorar minhas habilidades em programação. Cada projeto
+                    foi pensado para simular desafios reais de desenvolvimento,
+                    explorando boas práticas de arquitetura, organização de
+                    código e modelagem de sistemas.
+                  </p>
+                </div>
+              </div>
 
-            <thead>
+              <div class="projetos-card">
+                <img src="projetos.svg" alt="Imagem do Projeto 1" />
+                <h2>Projeto 1</h2>
+                <p>
+                  Descrição do Projeto 1. Este projeto é um sistema de
+                  gerenciamento de tarefas que permite aos usuários organizar
+                  suas atividades diárias de forma eficiente.
+                </p>
+                <a href="projeto1.html" target="_blank">Ver detalhes</a>
+              </div>
 
-                <tr>
+              <div class="projetos-card">
+                <img src="projetos.svg" alt="Imagem do Projeto 1" />
+                <h2>Projeto 1</h2>
+                <p>
+                  Descrição do Projeto 1. Este projeto é um sistema de
+                  gerenciamento de tarefas que permite aos usuários organizar
+                  suas atividades diárias de forma eficiente.
+                </p>
+                <a href="projeto1.html" target="_blank">Ver detalhes</a>
+              </div>
+
+              <div class="projetos-card">
+                <img src="projetos.svg" alt="Imagem do Projeto 1" />
+                <h2>Projeto 1</h2>
+                <p>
+                  Descrição do Projeto 1. Este projeto é um sistema de
+                  gerenciamento de tarefas que permite aos usuários organizar
+                  suas atividades diárias de forma eficiente.
+                </p>
+                <a href="projeto1.html" target="_blank">Ver detalhes</a>
+              </div>
+            </div>
+          </section>
+
+          <section id="habilidades">
+            <div class="habilidades-container">
+              <h2>Habilidades e tecnologias</h2>
+
+              <table>
+                <thead>
+                  <tr>
                     <th>Tecnologias</th>
                     <th>Nível</th>
                     <th>Descrição</th>
-                </tr>
+                  </tr>
+                </thead>
 
-            </thead>
-
-            <tbody>
-
-                <tr>
+                <tbody>
+                  <tr>
                     <td>Java</td>
-                    <td>Avançado</td>
+                    <td><span class="nivel-tag">Avançado</span></td>
                     <td>Desenvolvimento de aplicações backend com Java.</td>
-                </tr>
+                  </tr>
 
-                <tr>
+                  <tr>
                     <td>HTML</td>
-                    <td>Iniciante</td>
-                    <td>Capaz de construir estruturas de páginas web de forma semântica e acessível.</td>
-                </tr>
+                    <td><span class="nivel-tag">Iniciante</span></td>
+                    <td>Estruturação de páginas web semânticas.</td>
+                  </tr>
 
-                <tr>
+                  <tr>
                     <td>CSS</td>
-                    <td>Iniciante</td>
-                    <td>Capaz de estilizar páginas web de forma responsiva e acessível.</td>
-                </tr>
+                    <td><span class="nivel-tag">Iniciante</span></td>
+                    <td>Estilização responsiva de interfaces.</td>
+                  </tr>
 
-                <tr>
+                  <tr>
                     <td>JavaScript</td>
-                    <td>Iniciante</td>
-                    <td>Desenvolvimento de script do lado cliente para interatividade em páginas web.</td>
-                </tr>
+                    <td><span class="nivel-tag">Iniciante</span></td>
+                    <td>Interatividade em aplicações web.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-            </tbody>
+          <section id="terminal-container">
+            <div class="terminal-menu">
+              <div id="terminal-display" class="terminal-display">
+                <div id="terminal-header-msgs">
+                  <div class="sistema-mensagem">
+                    [SISTEM] Kenel 5.15.0 iniciando...
+                  </div>
+                  <div class="sistema-mensagem">
+                    Aguardado entrada do usuário (digite 'help' para
+                    comandos)...
+                  </div>
+                </div>
+                <div id="terminal-content"></div>
+              </div>
 
+              <div class="terminal-inpout-line">
+                <span class="prompt">user@visitante:~$</span>
+                <div class="terminal-input-wrapper">
+                  <input
+                    type="text"
+                    id="terminal-cmd"
+                    autofocus
+                    spellcheck="false"
+                    aria-autocomplete="off"
+                  />
+                  <span class="cursor"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
 
+        <footer>
+          <section id="contato">
+            <div class="conteudo-principal-contato">
+              <div class="texto-introducao-contato">
+                <h2>Contato</h2>
+                <p>Tem algum projeto em mente? Entre em contato comigo!</p>
+              </div>
+            </div>
 
-        </table>
-        
-    </section>
+            <div class="contato-container">
+              <div class="endereco-card">
+                <address>
+                  <a href="mailto:a.luiza.fullstack@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    a.luiza.fullstack@gmail.com
+                  </a>
+                </address>
+              </div>
 
-    <footer>
+              <div class="endereco-card">
+                <address>
+                  <a
+                    href="https://www.linkedin.com/in/analuizafullstack/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                  </a>
+                </address>
+              </div>
 
-        <section id="Contato">
-            <h2>Contato</h2>
-            <p>Tem algum projeto em mente? Entre em contato comigo!</p>
-            <form action="">
-                <label for="name">Nome: </label>
-                <input type="text" id="nome" name="nome" required> <br>
+              <div class="endereco-card">
+                <address>
+                  <a
+                    href="https://github.com/aluizafullstack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-github"></i> GitHub
+                  </a>
+                </address>
+              </div>
 
-                <label for="email">E-mail: </label>
-                <input type="email" id="email" name="email" required> <br>
+              <div class="endereco-card">
+                <address>
+                  <a
+                    href="https://www.instagram.com/aluizafullstack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                  </a>
+                </address>
+              </div>
 
-                <label for="telefone">Telefone: </label>
-                <input type="tel" id="telefone" name="telefone"> <br>
+              <div class="endereco-card">
+                <address>
+                  <a
+                    href="https://wa.me/5547997055373"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                  </a>
+                </address>
+              </div>
+            </div>
 
-                <label for="assunto">Assunto: </label>
-                <select name="assunto" id="assunto">
-                    <option value="orcamento">Orçamento</option>
-                    <option value="duvida">Dúvida</option>
-                    <option value="outro">Outro</option>
-                </select>
-                    <br>
-
-                <label for="mensagem">Mensagem: </label>
-                <textarea name="mensagem" id="mensagem" cols="20" rows="5" required></textarea> <br>
-
-                <input type="checkbox" id="inscricao" name="inscricao">
-                <label for="inscricao">Deseja receber novidades por e-mail?</label> <br>
-
-                <input type="submit" value="Enviar mensagem">
-
-            </form>
-            <address>
-                E-mail: <a href="mailto:a.luiza.fullstack@gmail.com">a.luiza.fullstack@gmail.com</a> <br>
-                Telefone: <a href="tel: +55 (47) 997055373">+55 (47) 997055373</a>
-            </address>
-        </section>
-
-        <p>Copyright © 2026 Ana</p>
-
-    </footer>
-</body>
+            <div class="rodape">
+              <p>&copy; 2026 Ana Luiza. Todos os direitos reservados.</p>
+            </div>
+          </section>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>
