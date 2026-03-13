@@ -5,7 +5,7 @@ const terminalContent = document.getElementById('terminal-content');
 // Usaremos 'caminhos' em todo o código para ser consistente
 const caminhos = {
     '/sobre': 'sobre',
-    '/projetos': 'projetos',
+    '/projeto': 'projeto',
     '/habilidades': 'habilidades',
     '/contato': 'contato'
 };
